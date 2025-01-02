@@ -1,0 +1,66 @@
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.keypad button {
+    width: 100%;
+    padding: 16px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: white;
+    border: 2px solid #4CAF50;
+    border-radius: 12px;
+    color: #4CAF50;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.keypad button:active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.keypad .delete {
+    border-color: #e74c3c;
+    color: #e74c3c;
+}
+
+.keypad .delete:active {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.submit {
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 12px;
+    color: white;
+}
+
+.submit:active {
+    background-color: #357a38;
+}
+
+.replay-button {
+    font-size: 20px;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 30px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 30px;
+}
+
+.replay-button:active {
+    background-color: #357a38;
+}

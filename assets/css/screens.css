@@ -1,0 +1,84 @@
+.screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f4f6;
+}
+
+.hidden {
+    display: none;
+}
+
+.title-container {
+    text-align: center;
+    max-width: 100%;
+    padding: 20px;
+}
+
+.title-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.play-button {
+    position: fixed;
+    left: 50%;
+    bottom: 25%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    padding: 15px 60px;
+    border: none;
+    border-radius: 30px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tutorial-button {
+    font-size: 24px;
+    padding: 15px 60px;
+    border: none;
+    border-radius: 30px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.play-button:active,
+.tutorial-button:active {
+    background-color: #357a38;
+}
+
+.tutorial-container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    text-align: center;
+}
+
+.tutorial-content {
+    text-align: left;
+    margin: 20px 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.countdown-number {
+    font-size: min(80px, 12vw);
+    font-weight: bold;
+    color: #4CAF50;
+}
