@@ -9,7 +9,18 @@ const ui = {
 
         const feedback = document.createElement('div');
         feedback.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
-        feedback.textContent = isCorrect ? '正解！' : '不正解...';
+        
+        // シンボル要素（円または×印）
+        const symbol = document.createElement('div');
+        symbol.className = 'feedback-symbol';
+        
+        // テキスト要素
+        const text = document.createElement('div');
+        text.className = 'feedback-text';
+        text.textContent = isCorrect ? '正解！' : '不正解...';
+        
+        feedback.appendChild(symbol);
+        feedback.appendChild(text);
         document.body.appendChild(feedback);
 
         setTimeout(() => feedback.classList.add('show'), 10);

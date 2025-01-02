@@ -1,0 +1,74 @@
+/* フィードバック表示のベーススタイル */
+.feedback {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    background: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.feedback.show {
+    opacity: 1;
+}
+
+/* シンボル（円と×印）のスタイル */
+.feedback-symbol {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+    position: relative;
+    background: none !important;
+}
+
+/* 正解の円 */
+.feedback.correct .feedback-symbol {
+    border: 16px solid #0169F9;
+    border-radius: 50%;
+    background: none;
+}
+
+/* 不正解の×印 */
+.feedback.incorrect .feedback-symbol::before,
+.feedback.incorrect .feedback-symbol::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 16px;
+    background: #f44336;
+    transform-origin: center;
+}
+
+.feedback.incorrect .feedback-symbol::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.feedback.incorrect .feedback-symbol::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* テキストのスタイル */
+.feedback-text {
+    font-size: 36px;
+    font-weight: bold;
+    background: none !important;
+}
+
+.feedback.correct .feedback-text {
+    color: #0169F9;
+}
+
+.feedback.incorrect .feedback-text {
+    color: #f44336;
+}

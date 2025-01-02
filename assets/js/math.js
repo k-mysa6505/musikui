@@ -1,5 +1,8 @@
 const math = {
     gcd: function(a, b) {
+        if (typeof a !== 'number' || typeof b !== 'number') {
+            throw new TypeError('GCD inputs must be numbers');
+        }
         a = Math.abs(a);
         b = Math.abs(b);
         while (b) {
@@ -12,6 +15,43 @@ const math = {
 
     abs: function(a) {
         return a < 0 ? -a : a;
+    },
+
+    // 少数を分数に変換
+    decimalToFraction: function(decimal) {
+        const EPSILON = 1.0E-10;  // 許容誤差
+        let numerator = 1;
+        let denominator = 1;
+        let x = decimal;
+        let truncated = Math.floor(x);
+        let fraction = x - truncated;
+
+        // 整数の場合
+        if (Math.abs(fraction) < EPSILON) {
+            return {
+                numerator: Math.floor(decimal),
+                denominator: 1
+            };
+        }
+
+        // 分母の候補を探索
+        for (denominator = 1; denominator <= 1000; denominator++) {
+            numerator = Math.round(decimal * denominator);
+            if (Math.abs(decimal - numerator / denominator) < EPSILON) {
+                // 既約分数にする
+                const gcd = this.gcd(Math.abs(numerator), denominator);
+                return {
+                    numerator: numerator / gcd,
+                    denominator: denominator / gcd
+                };
+            }
+        }
+
+        // 適切な分数が見つからない場合
+        return {
+            numerator: 0,
+            denominator: 0
+        };
     },
 
     createIntegral: function(upper, lower, coefP, coefQ, result, blankPosition) {

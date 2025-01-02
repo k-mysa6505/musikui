@@ -24,32 +24,81 @@ const app = {
     },
 
     displayProblem: function() {
-        this.currentProblem = problems.generateProblem(this.questionNumber);
         const problemElement = document.getElementById('problem');
+        const answerElement = document.getElementById('answer');
 
-        problemElement.innerHTML = this.currentProblem.display;
-        MathJax.Hub.Queue(["Typeset", MathJax.Hub, problemElement]);
-
-        if (this.currentProblem.subDisplay) {
-            const subDisplay = document.createElement('div');
-            subDisplay.className = 'sub-display';
-            subDisplay.textContent = this.currentProblem.subDisplay;
-            problemElement.appendChild(subDisplay);
+        // 最初の問題表示の場合はアニメーションなし
+        if (!this.currentProblem) {
+            this.currentProblem = problems.generateProblem(this.questionNumber);
+            problemElement.innerHTML = this.currentProblem.display;
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub, problemElement]);
+            if (this.currentProblem.subDisplay) {
+                const subDisplay = document.createElement('div');
+                subDisplay.className = 'sub-display';
+                subDisplay.innerHTML = this.currentProblem.subDisplay;
+                problemElement.appendChild(subDisplay);
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, subDisplay]);
+            }
+            // プレースホルダーを設定
+            this.currentAnswer = '';
+            answerElement.textContent = '?に入る数字は？';
+            answerElement.classList.add('empty');
+            return;
         }
+
+        // 問題切り替え時のアニメーション
+        problemElement.classList.add('slide-out');
+
+        setTimeout(() => {
+            this.currentProblem = problems.generateProblem(this.questionNumber);
+            problemElement.innerHTML = this.currentProblem.display;
+
+            if (this.currentProblem.subDisplay) {
+                const subDisplay = document.createElement('div');
+                subDisplay.className = 'sub-display';
+                subDisplay.innerHTML = this.currentProblem.subDisplay;
+                problemElement.appendChild(subDisplay);
+            }
+
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub, problemElement]);
+
+            // 新しい問題のプレースホルダーを設定
+            this.currentAnswer = '';
+            answerElement.textContent = '?に入る数字は？';
+            answerElement.classList.add('empty');
+
+            problemElement.classList.remove('slide-out');
+            problemElement.classList.add('slide-in');
+
+            setTimeout(() => {
+                problemElement.classList.remove('slide-in');
+            }, 300);
+        }, 300);
     },
 
     handleInput: function(value) {
+        const answerElement = document.getElementById('answer');
+
         if (value === '-' && this.currentAnswer === '') {
             this.currentAnswer = '-';
         } else if (value !== '-') {
             this.currentAnswer += value;
         }
-        document.getElementById('answer').textContent = this.currentAnswer;
+
+        answerElement.textContent = this.currentAnswer;
+        answerElement.classList.remove('empty');
     },
 
     handleDelete: function() {
+        const answerElement = document.getElementById('answer');
         this.currentAnswer = this.currentAnswer.slice(0, -1);
-        document.getElementById('answer').textContent = this.currentAnswer;
+
+        if (this.currentAnswer === '') {
+            answerElement.textContent = '?に入る数字は？';
+            answerElement.classList.add('empty');
+        } else {
+            answerElement.textContent = this.currentAnswer;
+        }
     },
 
     handleSubmit: function() {

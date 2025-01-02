@@ -51,12 +51,18 @@ body {
 }
 
 .answer {
-    font-size: 20px;
+    font-size: 28px;
     text-align: center;
     min-height: 30px;
     max-height: 30px;
     overflow: hidden;
     line-height: 30px;
+}
+
+.answer.empty {
+    font-size: 20px;
+    color: #999;
+    font-style: italic;
 }
 
 .level {
@@ -66,9 +72,9 @@ body {
 }
 
 .timer {
-    font-family: 'Courier New', monospace;
     font-size: 20px;
     color: #34495e;
+    font-style: italic;
 }
 
 /* MathJax関連 */
