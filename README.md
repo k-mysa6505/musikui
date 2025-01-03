@@ -14,7 +14,17 @@ _**□にあてはまる数をかきましょう。**_
 ## 📖 概要
 
 数式の一部が虫に食べられたという設定で，食べられた数字を当てるクイズゲームです．
-[プレイはこちら](https://kokko-my.github.io/musikui/)
+
+This is a quiz game in which you have to guess the number of the equation that has been eaten by an insect.
+
+[click here to play](https://kokko-my.github.io/musikui/)
+
+<div align="center">
+  <p float="left" align="middle">
+    <img src="/screenshots/gameplay1.png" width="400" alt="プレイ画面1" style="margin-right: 10px;"/>
+    <img src="/screenshots/gameplay2.png" width="400" alt="プレイ画面2"/>
+  </p>
+</div>
 
 ### 特徴
 
