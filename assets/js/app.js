@@ -67,7 +67,7 @@ const app = {
 
             // 新しい問題のプレースホルダーを設定
             this.currentAnswer = '';
-            answerElement.textContent = '?に入る数字は？';
+            answerElement.textContent = '□に入る数字は？';
             answerElement.classList.add('empty');
 
             problemElement.classList.remove('slide-out');
@@ -103,7 +103,7 @@ const app = {
         this.currentAnswer = this.currentAnswer.slice(0, -1);
 
         if (this.currentAnswer === '') {
-            answerElement.textContent = '?に入る数字は？';
+            answerElement.textContent = '□に入る数字は？';
             answerElement.classList.add('empty');
             submitButton.disabled = true;  // 入力が空になったらボタンを無効化
         } else {
