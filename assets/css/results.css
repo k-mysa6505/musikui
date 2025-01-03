@@ -1,0 +1,151 @@
+.results {
+    text-align: center;
+    padding: 10px;
+}
+
+.results-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.level-results {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    font-size: 20px;
+    padding: 8px 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+.level-status {
+    font-weight: bold;
+}
+
+.level-status.correct {
+    color: #27ae60;
+}
+
+.level-status.incorrect {
+    color: #c0392b;
+}
+
+.divider {
+    width: 80%;
+    height: 2px;
+    background: rgba(44, 62, 80, 0.2);
+    margin: 30px auto;
+}
+
+.time-display {
+    font-size: 24px;
+    margin: 20px 0;
+    font-family: 'Courier New', monospace;
+    color: #34495e;
+}
+
+.rank-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+    font-size: 24px;
+    font-style: italic;
+    color: #2c3e50;
+}
+
+.rank-display .rank-text {
+    font-weight: normal;
+    font-style: italic;
+}
+
+.rank-display .rank-grade {
+    font-size: 64px;
+    font-weight: bold;
+}
+
+.rank-grade {
+    font-size: 64px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0 15px;
+}
+
+/* ランクごとの色 */
+.rank-grade.rank-s {
+    background: linear-gradient(135deg,
+            #FFD700 -20%,
+            #FFF3A1 25%,
+            #FFD700 50%,
+            #FFF3A1 75%,
+            #FFD700 120%
+        );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rank-grade.rank-a {
+    background: linear-gradient(135deg,
+            #C0C0C0 -20%,
+            #FFFFFF 25%,
+            #C0C0C0 50%,
+            #FFFFFF 75%,
+            #C0C0C0 120%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rank-grade.rank-b {
+    background: linear-gradient(135deg,
+            #CD7F32 -20%,
+            #FFC28C 25%,
+            #CD7F32 50%,
+            #FFC28C 75%,
+            #CD7F32 120%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rank-grade.rank-c {
+    color: #9370DB;
+}
+
+.rank-grade.rank-d {
+    color: #4A4A4A;
+}
+
+.feedback {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 40px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.feedback.show {
+    opacity: 1;
+}
+
+.feedback.correct {
+    background-color: #4CAF50;
+}
+
+.feedback.incorrect {
+    background-color: #f44336;
+}

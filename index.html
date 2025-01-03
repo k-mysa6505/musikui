@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>虫食い算</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/buttons.css">
+    <link rel="stylesheet" href="assets/css/screens.css">
+    <link rel="stylesheet" href="assets/css/results.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/feedback.css">
+    <!-- MathJax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$','$'], ['\\(','\\)']],
+                displayMath: [['$$','$$'], ['\\[','\\]']],
+                processEscapes: true
+            },
+            "HTML-CSS": {
+                scale: 100,
+                matchFontHeight: true,
+                availableFonts: ["STIX"],
+                preferredFont: "STIX",
+                webFont: "STIX-Web",
+                mtextFontInherit: true
+            },
+            CommonHTML: {
+                scale: 100,
+                mtextFontInherit: true
+            },
+            displayAlign: "center",
+            displayIndent: "0"
+        });
+    </script>
+</head>
+
+<body>
+    <!-- タイトル画面 -->
+    <div id="titleScreen" class="screen">
+        <div class="title-container">
+            <img src="assets/images/title.png" alt="虫食い算" class="title-image">
+            <button class="play-button" onclick="showTutorial()">あそぶ</button>
+        </div>
+        <div class="github-link">
+            <a href="https://github.com/kokko-my/musikui" target="_blank"
+                style="color: #666; font-size: 12px; text-decoration: none; position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);">ソースコードはこちら</a>
+        </div>
+    </div>
+
+    <!-- チュートリアル画面 -->
+    <div id="tutorialScreen" class="screen hidden">
+        <div class="tutorial-container">
+            <h1>あそびかた</h1>
+            <div class="tutorial-content">
+                <p>1. 数式の？に入る数字を答えてね</p>
+                <p>2. 答えは整数の範囲だよ</p>
+                <p>3. 全7問あるよ</p>
+                <p>4. Sランク目指してがんばってね</p>
+                <p>※負数は「-」を先に押してね</p>
+            </div>
+            <button class="tutorial-button" onclick="startCountdown()">OK</button>
+        </div>
+    </div>
+
+    <!-- カウントダウン画面 -->
+    <div id="countdownScreen" class="screen hidden">
+        <div class="countdown-number"></div>
+    </div>
+
+    <!-- メインゲーム画面 -->
+    <div id="gameScreen" class="screen hidden">
+        <div class="container">
+            <div class="header">
+                <div class="level">LEVEL <span id="questionNumber">1</span></div>
+                <div class="timer">TIME: <span id="timer">00'00"00</span></div>
+            </div>
+
+            <div class="card">
+                <div id="problem" class="problem"></div>
+            </div>
+
+            <div class="card">
+                <div id="answer" class="answer"></div>
+            </div>
+
+            <div class="keypad">
+                <button onclick="handleInput('1')">1</button>
+                <button onclick="handleInput('2')">2</button>
+                <button onclick="handleInput('3')">3</button>
+                <button onclick="handleInput('4')">4</button>
+                <button onclick="handleInput('5')">5</button>
+                <button onclick="handleInput('6')">6</button>
+                <button onclick="handleInput('7')">7</button>
+                <button onclick="handleInput('8')">8</button>
+                <button onclick="handleInput('9')">9</button>
+                <button class="delete" onclick="handleDelete()">←</button>
+                <button onclick="handleInput('0')">0</button>
+                <button onclick="handleInput('-')">-</button>
+            </div>
+
+            <button id="submit" class="submit" onclick="handleSubmit()">OK</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/math.js"></script>
+    <script src="assets/js/problems.js"></script>
+    <script src="assets/js/timer.js"></script>
+    <script src="assets/js/ui.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
