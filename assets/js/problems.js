@@ -60,7 +60,7 @@ const problems = {
                 correctAns = quotient;
                 break;
             case 3:
-                display += `${dividend} ÷ ${divisor} = ${quotient} \\text{ あまり \\text{□} }`;
+                display += `${dividend} ÷ ${divisor} = ${quotient} \\text{ あまり □}`;
                 correctAns = remainder;
                 break;
         }

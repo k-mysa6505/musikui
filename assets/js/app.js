@@ -44,7 +44,7 @@ const app = {
             }
             // プレースホルダーを設定
             this.currentAnswer = '';
-            answerElement.textContent = '?に入る数字は？';
+            answerElement.textContent = '□に入る数字は？';
             answerElement.classList.add('empty');
             return;
         }
