@@ -23,11 +23,11 @@ const problems = {
 
         switch (blankPosition) {
             case 0:
-                display += `\\text{?} + ${num2} = ${result}`;
+                display += `\\text{□} + ${num2} = ${result}`;
                 correctAns = num1;
                 break;
             case 1:
-                display += `${num1} + \\text{?} = ${result}`;
+                display += `${num1} + \\text{□} = ${result}`;
                 correctAns = num2;
                 break;
         }
@@ -48,19 +48,19 @@ const problems = {
 
         switch (blankPosition) {
             case 0:
-                display += `\\text{?} ÷ ${divisor} = ${quotient} \\text{ あまり } ${remainder}`;
+                display += `\\text{□} ÷ ${divisor} = ${quotient} \\text{ あまり } ${remainder}`;
                 correctAns = dividend;
                 break;
             case 1:
-                display += `${dividend} ÷ \\text{?} = ${quotient} \\text{ あまり } ${remainder}`;
+                display += `${dividend} ÷ \\text{□} = ${quotient} \\text{ あまり } ${remainder}`;
                 correctAns = divisor;
                 break;
             case 2:
-                display += `${dividend} ÷ ${divisor} = \\text{?} \\text{ あまり } ${remainder}`;
+                display += `${dividend} ÷ ${divisor} = \\text{□} \\text{ あまり } ${remainder}`;
                 correctAns = quotient;
                 break;
             case 3:
-                display += `${dividend} ÷ ${divisor} = ${quotient} \\text{ あまり ? }`;
+                display += `${dividend} ÷ ${divisor} = ${quotient} \\text{ あまり \\text{□} }`;
                 correctAns = remainder;
                 break;
         }
@@ -89,23 +89,23 @@ const problems = {
 
         switch (blankPosition) {
             case 0:
-                display += `\\text{?}x ${b > 0 ? '+' : '-'} ${Math.abs(b)} = ${c}`;
+                display += `\\text{□}x ${b > 0 ? '+' : '-'} ${Math.abs(b)} = ${c}`;
                 subDisplay += `x = ${x}`;
                 correctAns = a;
                 break;
             case 1:
-                display += `${a}x ${b > 0 ? '+' : '-'} \\text{?} = ${c}`;
+                display += `${a}x ${b > 0 ? '+' : '-'} \\text{□} = ${c}`;
                 subDisplay += `x = ${x}`;
                 correctAns = Math.abs(b);
                 break;
             case 2:
-                display += `${a}x ${b > 0 ? '+' : '-'} ${Math.abs(b)} = \\text{?}`;
+                display += `${a}x ${b > 0 ? '+' : '-'} ${Math.abs(b)} = \\text{□}`;
                 subDisplay += `x = ${x}`;
                 correctAns = c;
                 break;
             case 3:
                 display += `${a}x ${b > 0 ? '+' : '-'} ${Math.abs(b)} = ${c}`;
-                subDisplay += `x = ?`;
+                subDisplay += `x = \\text{□}`;
                 correctAns = x;
                 break;
             default:
@@ -138,23 +138,23 @@ const problems = {
 
         switch (blankPosition) {
             case 0:
-                display += `x^2 ${b > 0 ? '+' : '-'} \\text{?}x ${c > 0 ? '+' : '-'} ${Math.abs(c)} = 0`;
+                display += `x^2 ${b > 0 ? '+' : '-'} \\text{□}x ${c > 0 ? '+' : '-'} ${Math.abs(c)} = 0`;
                 subDisplay += `x = ${x1}, ${x2}`;
                 correctAns = Math.abs(b);
                 break;
             case 1:
-                display += `x^2 ${b > 0 ? '+' : '-'} ${Math.abs(b)}x ${c > 0 ? '+' : '-'} \\text{?} = 0`;
+                display += `x^2 ${b > 0 ? '+' : '-'} ${Math.abs(b)}x ${c > 0 ? '+' : '-'} \\text{□} = 0`;
                 subDisplay += `x = ${x1}, ${x2}`;
                 correctAns = Math.abs(c);
                 break;
             case 2:
                 display += `x^2 ${b > 0 ? '+' : '-'} ${Math.abs(b)}x ${c > 0 ? '+' : '-'} ${Math.abs(c)} = 0`;
-                subDisplay += `x = \\text{?}, ${x2}`;
+                subDisplay += `x = \\text{□}, ${x2}`;
                 correctAns = x1;
                 break;
             case 3:
                 display += `x^2 ${b > 0 ? '+' : '-'} ${Math.abs(b)}x ${c > 0 ? '+' : '-'} ${Math.abs(c)} = 0`;
-                subDisplay += `x = ${x1}, \\text{?}`;
+                subDisplay += `x = ${x1}, \\text{□}`;
                 correctAns = x2;
                 break;
         }
@@ -193,28 +193,28 @@ const problems = {
 
         let angleSentence, valueSentence;
         if (pattern.value == 1 / 2) {
-            angleSentence = blankPosition == 0 ? `\\text{?}` : pattern.angle;
-            valueSentence = blankPosition == 0 ? `\\frac{1}{2}` : `\\frac{1}{\\text{?}}`;
+            angleSentence = blankPosition == 0 ? `\\text{□}` : pattern.angle;
+            valueSentence = blankPosition == 0 ? `\\frac{1}{2}` : `\\frac{1}{\\text{□}}`;
             correctAns    = blankPosition == 0 ? pattern.angle : 2;
         } else if (pattern.value == 1 / Math.sqrt(2)) {
-            angleSentence = blankPosition == 0 ? `\\text{?}` : pattern.angle;
-            valueSentence = blankPosition == 0 ? `\\frac{1}{\\sqrt{2}}` : `\\frac{1}{\\sqrt{\\text{?}}}`;
+            angleSentence = blankPosition == 0 ? `\\text{□}` : pattern.angle;
+            valueSentence = blankPosition == 0 ? `\\frac{1}{\\sqrt{2}}` : `\\frac{1}{\\sqrt{\\text{□}}}`;
             correctAns    = blankPosition == 0 ? pattern.angle : 2;
         } else if (pattern.value == 1 / Math.sqrt(3)) {
-            angleSentence = blankPosition == 0 ? `\\text{?}` : pattern.angle;
-            valueSentence = blankPosition == 0 ? `\\frac{1}{\\sqrt{3}}` : `\\frac{1}{\\sqrt{\\text{?}}}`;
+            angleSentence = blankPosition == 0 ? `\\text{□}` : pattern.angle;
+            valueSentence = blankPosition == 0 ? `\\frac{1}{\\sqrt{3}}` : `\\frac{1}{\\sqrt{\\text{□}}}`;
             correctAns    = blankPosition == 0 ? pattern.angle : 3;
         } else if (pattern.value == Math.sqrt(3) / 2) {
-            angleSentence = blankPosition == 0 ? `\\text{?}` : pattern.angle;
-            valueSentence = blankPosition == 0 ? `\\frac{\\sqrt{3}}{2}` : `\\frac{\\sqrt{\\text{?}}}{2}`;
+            angleSentence = blankPosition == 0 ? `\\text{□}` : pattern.angle;
+            valueSentence = blankPosition == 0 ? `\\frac{\\sqrt{3}}{2}` : `\\frac{\\sqrt{\\text{□}}}{2}`;
             correctAns    = blankPosition == 0 ? pattern.angle : 3;
         } else if (pattern.value == Math.sqrt(3)) {
-            angleSentence = blankPosition == 0 ? `\\text{?}` : pattern.angle;
-            valueSentence = blankPosition == 0 ? `\\sqrt{3}` : `\\sqrt{\\text{?}}`;
+            angleSentence = blankPosition == 0 ? `\\text{□}` : pattern.angle;
+            valueSentence = blankPosition == 0 ? `\\sqrt{3}` : `\\sqrt{\\text{□}}`;
             correctAns    = blankPosition == 0 ? pattern.angle : 3;
         } else {
-            angleSentence = blankPosition == 0 ? `\\text{?}` : pattern.angle;
-            valueSentence = blankPosition == 0 ? pattern.value : `\\text{?}`;
+            angleSentence = blankPosition == 0 ? `\\text{□}` : pattern.angle;
+            valueSentence = blankPosition == 0 ? pattern.value : `\\text{□}`;
             correctAns    = blankPosition == 0 ? pattern.angle : pattern.value;
         }
 
@@ -294,7 +294,7 @@ const problems = {
 
         const matrixDisplay = matrix.map((row, i) =>
             row.map((val, j) =>
-                i === blankRow && j === blankCol ? '\\text{?}' : val
+                i === blankRow && j === blankCol ? '\\text{□}' : val
             )
         );
 
@@ -347,20 +347,20 @@ const problems = {
         // 漸化式の表示
         let display = '\\[';
         display += 'a_{n+1} = ';
-        display += blankPosition === 0 ? '\\text{?}' : p;
+        display += blankPosition === 0 ? '\\text{□}' : p;
         display += 'a_n';
-        display += (blankPosition === 1 ? ' + \\text{?}' : (q >= 0 ? ` + ${q}` : ` ${q}`));
+        display += (blankPosition === 1 ? ' + \\text{□}' : (q >= 0 ? ` + ${q}` : ` ${q}`));
         display += ', \\;\\; a_1 = ';
-        display += blankPosition === 2 ? '\\text{?}' : r;
+        display += blankPosition === 2 ? '\\text{□}' : r;
         display += '\\]';
 
         // 一般項の表示
         let subDisplay = '\\[\\Longrightarrow a_n = ';
-        subDisplay += blankPosition === 3 ? '\\text{?}' : s;
+        subDisplay += blankPosition === 3 ? '\\text{□}' : s;
         subDisplay += ' \\cdot ';
-        subDisplay += blankPosition === 4 ? '\\text{?}' : t;
+        subDisplay += blankPosition === 4 ? '\\text{□}' : t;
         subDisplay += '^{n-1}';
-        subDisplay += blankPosition === 5 ? `${u > 0 ? '+' : '-'} \\text{?}` : u;
+        subDisplay += blankPosition === 5 ? `${u > 0 ? '+' : '-'} \\text{□}` : u;
         subDisplay += '\\]';
 
         return {

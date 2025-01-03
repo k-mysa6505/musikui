@@ -57,15 +57,15 @@ const math = {
     createIntegral: function(upper, lower, coefP, coefQ, result, blankPosition) {
         let display = '\\[';
         switch (blankPosition) {
-            case 0: display += `\\int_{${lower}}^{\\text{?}}`; break;
-            case 1: display += `\\int_{\\text{?}}^{${upper}}`; break;
+            case 0: display += `\\int_{${lower}}^{\\text{□}}`; break;
+            case 1: display += `\\int_{\\text{□}}^{${upper}}`; break;
             case 2: display += `\\int_{${lower}}^{${upper}}`; break;
             case 3: display += `\\int_{${lower}}^{${upper}}`; break;
         }
         display += ' (';
-        display += blankPosition === 2 ? `\\text{?}x` : `${coefP === 1 ? '' : coefP}x`;
+        display += blankPosition === 2 ? `\\text{□}x` : `${coefP === 1 ? '' : coefP}x`;
         display += blankPosition === 3
-            ? ` ${coefQ > 0 ? '+' : '-'} \\text{?}`
+            ? ` ${coefQ > 0 ? '+' : '-'} \\text{□}`
             : ` ${coefQ > 0 ? '+' : '-'} ${Math.abs(coefQ)}`;
         display += `) dx = ${result} \\]`;
         return display;
