@@ -21,8 +21,8 @@ This is a quiz game in which you have to guess the number of the equation that h
 
 <div align="center">
   <p float="left" align="middle">
-    <img src="/screenshots/gameplay1.png" width="400" alt="プレイ画面1" style="margin-right: 10px;"/>
-    <img src="/screenshots/gameplay2.png" width="400" alt="プレイ画面2"/>
+    <img src="/screenshots/gameplay1.png" width="200" alt="プレイ画面1" style="margin-right: 10px;"/>
+    <img src="/screenshots/gameplay2.png" width="200" alt="プレイ画面2"/>
   </p>
 </div>
 
