@@ -15,7 +15,7 @@ _**□にあてはまる数をかきましょう。**_
 
 数式の一部が虫に食べられたという設定で，食べられた数字を当てるクイズゲームです．
 
-This is a quiz game in which you have to guess the number of the equation that has been eaten by an insect.
+This is a quiz game in which you have to guess the number of the equation that has been eaten by a worm.
 
 [click here to play](https://kokko-my.github.io/musikui/)
 
