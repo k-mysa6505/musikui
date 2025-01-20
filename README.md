@@ -17,7 +17,7 @@ _**□にあてはまる数をかきましょう。**_
 
 This is a quiz game in which you have to guess the number of the equation that has been eaten by a worm.
 
-[click here to play](https://kokko-my.github.io/musikui/)
+[click here to play](https://k-mysa6505.github.io/musikui/)
 
 <div align="center">
   <p float="left" align="middle">
